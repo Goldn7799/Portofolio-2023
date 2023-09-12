@@ -2,12 +2,14 @@
   overflow-x: hidden;
   background-color: rgb(25, 25, 25);
   color: white;
+  scroll-behavior: smooth;
 }
 
 html {
   overflow-x: hidden;
   background-color: rgb(25, 25, 25);
   color: white;
+  scroll-behavior: smooth;
 }
 
 .thisNavbar {
@@ -809,7 +811,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  -webkit-transform: translateY(50px);
+  -webkit-transform: translateY(40px);
   -moz-transform: translateY(80px) translateX(-5px);
   -ms-transform: translateY(80px) translateX(-5px);
   -o-transform: translateY(80px) translateX(-5px);
@@ -842,4 +844,81 @@ html {
 
 #Project .project-box .thisItem:hover {
   box-shadow: 0px 0px 4px 3px white;
+}
+
+#scroll-mouse {
+  position: fixed;
+  right: 50%;
+  bottom: 0;
+  transform: translateX(50%);
+  margin-bottom: 20px;
+  width: 55px;
+  height: 55px;
+  transition: all ease-in-out 0.2s;
+  border-radius: 10px;
+  background-image: url(../Assets/scroll-animation.gif);
+  background-position: center;
+  background-size: 61px;
+  background-repeat: no-repeat;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -ms-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+#scroll-up {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  width: 40px;
+  height: 40px;
+  transition: all ease-in-out 0.2s;
+  border-radius: 10px;
+  cursor: pointer;
+  background-image: url(../Assets/up-arrow.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -ms-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#scroll-up:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 3px 2px white;
+  border-radius: 50%;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#Contact h3 {
+  text-align: center;
 }

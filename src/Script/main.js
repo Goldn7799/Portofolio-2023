@@ -77,8 +77,8 @@ const page = {
     pgfun.Add(`<nav class="thisNavbar" id="thisNavbar">
       <div class="navb-item navb-position">
         <div class="nitem-info">
-          <img alt="profile potho" src="./src/Assets/profile.gif"/>
-          <h5>Syeif Sultoni Akbar</h5>
+          <!-- <img alt="profile potho" src="./src/Assets/profile.gif"/> -->
+          <h5><b>Syeif Sultoni Akbar</b></h5>
         </div>
         <div class="nitem-selector d-none d-lg-flex">
           <div class="nitem-spage">
@@ -422,6 +422,11 @@ const page = {
         </div>
       </div>
     </div><canvas style="height: 50px;"></canvas>`)
+    pgfun.Add(`<div id="Contact">
+      <h3>{/slash indo/} Contact {/slash indo/}</h3>
+      <div class="contact-box"></div>
+    </div>`)
+    pgfun.Add(`<div id="scroll-mouse"></div><div id="scroll-up"></div>`)
     // Page Variable
     var delayed = 0;
     // // Running Text
@@ -446,6 +451,11 @@ const page = {
     const pgSkills = document.querySelector('#Skills')
     const pgProject = document.querySelector('#Project')
 
+    // Function Keys
+    document.getElementById('scroll-up').addEventListener('click', ()=>{
+      mdHref('#Home');
+    })
+
     // Update display interval
     const update = () => {
       if (Global.PageState === "Home") {
@@ -453,9 +463,13 @@ const page = {
         if (window.scrollY > 100) {
           document.getElementById('thisNavbar').style.top = "";
           document.getElementById('thisNavbar').style.width = "";
+          document.getElementById('scroll-mouse').style.marginBottom = "-80px";
+          document.getElementById('scroll-up').style.marginBottom = "20px";
         } else {
           document.getElementById('thisNavbar').style.top = "-8.2%";
           document.getElementById('thisNavbar').style.width = "90%";
+          document.getElementById('scroll-mouse').style.marginBottom = "20px";
+          document.getElementById('scroll-up').style.marginBottom = "-80px";
         }
         if (window.screen.width < 666) {
           document.querySelector('.experince-content').classList.remove('exec-lg');
@@ -678,7 +692,7 @@ const mdHref = (url) => {
   };
 }
 const mdOpen = (url) => {
-  window.location.replace(url);
+  window.open(url);
   if (Global.devMode) {
     console.log(`Opening ${url}`);
   };
