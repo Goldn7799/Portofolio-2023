@@ -5,7 +5,8 @@ const root = document.getElementById('root');
 
 // Setting up Global Variable
 let Global = {
-  "devMode": false,
+  "devMode": true,
+  "logLevel": 1,
   "PageState": undefined,
   "navState": undefined
 }
@@ -22,17 +23,49 @@ const pgfun = {
   },
   "Add": (ElementText) => {
     root.innerHTML += pgfun.Parse(ElementText);
+    if (Global.devMode) {
+      console.log("<< Add New Element >>");
+    };
   },
   "Set": (ElementText) => {
     root.innerHTML = pgfun.Parse(ElementText);
+    if (Global.devMode) {
+      console.log("<< Set The Element >>");
+    };
   },
   "SetState": (text) => {
     Global.PageState = text;
+    if (Global.devMode) {
+      console.log(`<< Page State set to '${text}' >>`);
+    };
   },
   "Parse": (text) => {
     var ThisText = text;
     ThisText = `${ThisText}`.replaceAll('{/slash indo/}', '<span class="slash-indo"><i>/</i><i>/</i><i>/</i><i>/</i></span>');
+    if (Global.devMode && Global.logLevel > 1) {
+      console.log(`<< Parsed The Element >>`);
+    };
     return ThisText;
+  },
+  "Id": {
+    "Add": (id, ElementText) => {
+      document.getElementById(id).innerHTML += pgfun.Parse(ElementText);
+      if (Global.devMode) {
+        console.log(`<< Add new Element to #${id} >>`);
+      };
+    },
+    "Set": (id, ElementText) => {
+      document.getElementById(id).innerHTML = pgfun.Parse(ElementText);
+      if (Global.devMode) {
+        console.log(`<< Set the Element #${id} >>`);
+      };
+    },
+    "Clear": (id) => {
+      document.getElementById(id).innerHTML = '';
+      if (Global.devMode) {
+        console.log(`<< Clearing #${id} >>`);
+      };
+    }
   }
 }
 
@@ -87,7 +120,7 @@ const page = {
     </div>`)
     pgfun.Add(`<div id="About">
       <h3>{/slash indo/} About Me {/slash indo/}</h3>
-      <div class="about-box" id="About-Box" style="opacity: 0;">
+      <div class="about-box" id="About-Box" style="opacity: 0; transform: translateY(65px);">
         <div class="profile d-none d-md-block"></div>
         <p>Hello, let me introduce myself, my name is Syeif Sultoni Akbar, I come from Malang, precisely in the district. Bululawang is in Indonesia in the province of East Java. I have approximately 4 years experience in the world of coding and more than 5 years studying electronics and machines with my father. My hobby is studying logical things such as coding, electronics and science. I also like learning about computers and networking. I'm still relatively young, yes I'm 15 years old now in 2023. I'm a perfectionist, nice to meet you :)</p>
       </div>
@@ -219,6 +252,121 @@ const page = {
     </div><canvas style="height: 50px"></canvas>`)
     pgfun.Add(`<div id="Skills">
       <h3>{/slash indo/} Skills {/slash indo/}</h3>
+      <div class="skills-box" id="skills-box" style="transform: scale(0, 1);">
+        <div class="thisContent row justify-content-center">
+          <div class="thisItem col">
+            <img alt="HTML Icon" src="./src/Assets/Laguage/html.png"/>
+            <div class="underline"></div>
+            <p>HTML</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="CSS Icon" src="./src/Assets/Laguage/css.png"/>
+            <div class="underline"></div>
+            <p>CSS</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="JS Icon" src="./src/Assets/Laguage/js.png"/>
+            <div class="underline"></div>
+            <p>Java Script</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Bash Icon" src="./src/Assets/Laguage/bash.png"/>
+            <div class="underline"></div>
+            <p>Bash</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Java Icon" src="./src/Assets/Laguage/java.png"/>
+            <div class="underline"></div>
+            <p>Java</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Linux Icon" src="./src/Assets/Laguage/linux.png"/>
+            <div class="underline"></div>
+            <p>Linux</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="CPP Icon" src="./src/Assets/Laguage/cpp.png"/>
+            <div class="underline"></div>
+            <p>Cpp</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Server Icon" src="./src/Assets/Laguage/server.png"/>
+            <div class="underline"></div>
+            <p>Server</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="NodeJS Icon" src="./src/Assets/Laguage/nodejs.png"/>
+            <div class="underline"></div>
+            <p>Node JS</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Bootstrap Icon" src="./src/Assets/Laguage/bootstrap.png"/>
+            <div class="underline"></div>
+            <p>Bootstrap</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="YML Icon" src="./src/Assets/Laguage/yml.png"/>
+            <div class="underline"></div>
+            <p>YML</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Yaml Icon" src="./src/Assets/Laguage/yaml.png"/>
+            <div class="underline"></div>
+            <p>YAML</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Json Icon" src="./src/Assets/Laguage/json.png"/>
+            <div class="underline"></div>
+            <p>JSON</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Computer Icon" src="./src/Assets/computer.png"/>
+            <div class="underline"></div>
+            <p>Computer</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Phone Icon" src="./src/Assets/handphone.png"/>
+            <div class="underline"></div>
+            <p>Cell Phone</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Android Icon" src="./src/Assets/Laguage/android.png"/>
+            <div class="underline"></div>
+            <p>Android</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Firebase Icon" src="./src/Assets/Laguage/firebase.png"/>
+            <div class="underline"></div>
+            <p>Firebase</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Express Icon" src="./src/Assets/Laguage/express.png"/>
+            <div class="underline"></div>
+            <p>Express</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Bukkit Icon" src="./src/Assets/Laguage/bukkit.png"/>
+            <div class="underline"></div>
+            <p>Bukkit</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Paper Icon" src="./src/Assets/Laguage/paper.png"/>
+            <div class="underline"></div>
+            <p>Paper</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Pmmp Icon" src="./src/Assets/Laguage/pmmp.png"/>
+            <div class="underline"></div>
+            <p>PMMP</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="SKUnity Icon" src="./src/Assets/Laguage/skunity.png"/>
+            <div class="underline"></div>
+            <p>SKUnity</p>
+          </div>
+        </div>
+        <div id="thisTransition"></div>
+      </div>
     </div>`);
     // Page Variable
     var delayed = 0;
@@ -297,31 +445,10 @@ const page = {
           document.querySelector('.navContact').classList.add('active');
         };
 
-        // // Scroll Animation
-        // // // Content
-        // if (document.querySelector('#expContent1').getBoundingClientRect().top < 360) {
-        //   document.getElementById('expContent1').style.transform = 'scale(1, 1)';
-        // };
-        // if (document.querySelector('#expContent2').getBoundingClientRect().top < 360) {
-        //   document.getElementById('expContent2').style.transform = 'scale(1, 1)';
-        // };
-        // if (document.querySelector('#expContent3').getBoundingClientRect().top < 360) {
-        //   document.getElementById('expContent3').style.transform = 'scale(1, 1)';
-        // };
-        // if (document.querySelector('#expContent4').getBoundingClientRect().top < 360) {
-        //   document.getElementById('expContent4').style.transform = 'scale(1, 1)';
-        // };
-        // if (document.querySelector('#expContent5').getBoundingClientRect().top < 360) {
-        //   document.getElementById('expContent5').style.transform = 'scale(1, 1)';
-        // };
-        // if (document.querySelector('#expContent6').getBoundingClientRect().top < 360) {
-        //   document.getElementById('expContent6').style.transform = 'scale(1, 1)';
-        // };
-
         // // Delay
         if (delayed > 4) {
           delayed = 0;
-          if (Global.devMode) {
+          if (Global.devMode && Global.logLevel > 2) {
             console.log('catch');
           };
         } else {
@@ -340,6 +467,7 @@ const page = {
         if (entry.isIntersecting) {
           setTimeout(() => {
             document.getElementById('About-Box').style.opacity = '1';
+            document.getElementById('About-Box').style.transform = 'translateY(0px)';
           }, 500);
           return;
         };
@@ -400,6 +528,16 @@ const page = {
       })
     })
     obsExpContent6.observe(document.querySelector('#expContent6'));
+    obsExpContent5.observe(document.querySelector('#expContent5'));
+    const obsSkills = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('skills-box').style.transform = 'scale(1, 1)';
+          return;
+        }
+      })
+    })
+    obsSkills.observe(document.querySelector('#skills-box'));
 
     const runningTextRunner = (Action, textArray) => {
       if (!rtextList[textArray]) return runningTextRunner('write', 0);
