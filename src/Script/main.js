@@ -325,14 +325,29 @@ const page = {
             <p>Computer</p>
           </div>
           <div class="thisItem col">
-            <img alt="Phone Icon" src="./src/Assets/handphone.png"/>
+            <img alt="React Icon" src="./src/Assets/Laguage/react.png"/>
             <div class="underline"></div>
-            <p>Cell Phone</p>
+            <p>React JS</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Python Icon" src="./src/Assets/Laguage/python.png"/>
+            <div class="underline"></div>
+            <p>Python</p>
           </div>
           <div class="thisItem col">
             <img alt="Android Icon" src="./src/Assets/Laguage/android.png"/>
             <div class="underline"></div>
             <p>Android</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Network Icon" src="./src/Assets/network.png"/>
+            <div class="underline"></div>
+            <p>Networking</p>
+          </div>
+          <div class="thisItem col">
+            <img alt="Mikrotik Icon" src="./src/Assets/mikrotik.png"/>
+            <div class="underline"></div>
+            <p>Mikrotik</p>
           </div>
           <div class="thisItem col">
             <img alt="Firebase Icon" src="./src/Assets/Laguage/firebase.png"/>
@@ -367,7 +382,10 @@ const page = {
         </div>
         <div id="thisTransition"></div>
       </div>
-    </div>`);
+    </div><canvas style="height: 50px;"></canvas>`);
+    pgfun.Add(`<div id="Project">
+      <h3>{/slash indo/} Project {/slash indo/}</h3>
+    </div>`)
     // Page Variable
     var delayed = 0;
     // // Running Text
@@ -389,6 +407,7 @@ const page = {
     const pgHome = document.querySelector('#Home')
     const pgAbout = document.querySelector('#About')
     const pgExperince = document.querySelector('#Experince')
+    const pgSkills = document.querySelector('#Skills')
 
     // Update display interval
     const update = () => {
@@ -413,6 +432,7 @@ const page = {
         const rcHome = pgHome.getBoundingClientRect();
         const rcAbout = pgAbout.getBoundingClientRect();
         const rcExperince = pgExperince.getBoundingClientRect();
+        const rcSkills = pgSkills.getBoundingClientRect();
         if (Math.abs(rcHome.top) < 200) {
           Global.navState = 'Home';
         };
@@ -421,6 +441,10 @@ const page = {
         };
         if (Math.abs(rcExperince.top) < 200) {
           Global.navState = 'Experince';
+        };
+        if (Math.abs(rcSkills.top) < 400) {
+          Global.navState = 'Skills';
+          console.log("SKILLLLLLLLL")
         };
         document.querySelector('.navHome').classList.remove('active');
         document.querySelector('.navAbout').classList.remove('active');

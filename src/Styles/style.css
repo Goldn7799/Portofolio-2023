@@ -691,12 +691,12 @@ html {
 
 #Skills .skills-box .thisContent .thisItem:hover img {
   animation: floating 2.5s ease-in-out infinite 0.2s;
-  transform: translateY(-18px);
+  transform: translateY(-18px) scale(0.9, 0.9);
   -webkit-animation: floating 2.5s ease-in-out infinite 0.2s;
-  -webkit-transform: translateY(-18px);
-  -moz-transform: translateY(-18px);
-  -ms-transform: translateY(-18px);
-  -o-transform: translateY(-18px);
+  -webkit-transform: translateY(-18px) scale(0.9, 0.9);
+  -moz-transform: translateY(-18px) scale(0.9, 0.9);
+  -ms-transform: translateY(-18px) scale(0.9, 0.9);
+  -o-transform: translateY(-18px) scale(0.9, 0.9);
 }
 
 #Skills .skills-box .thisContent .thisItem:hover .underline {
@@ -717,24 +717,24 @@ html {
 
 @keyframes floating {
   0% {
-    transform: translateY(-18px);
-    -webkit-transform: translateY(-18px);
-    -moz-transform: translateY(-18px);
-    -ms-transform: translateY(-18px);
-    -o-transform: translateY(-18px);
+    transform: translateY(-18px) scale(0.9, 0.9);
+    -webkit-transform: translateY(-18px) scale(0.9, 0.9);
+    -moz-transform: translateY(-18px) scale(0.9, 0.9);
+    -ms-transform: translateY(-18px) scale(0.9, 0.9);
+    -o-transform: translateY(-18px) scale(0.9, 0.9);
 }
   50% {
-    transform: translateY(-24px);
-    -webkit-transform: translateY(-24px);
-    -moz-transform: translateY(-24px);
-    -ms-transform: translateY(-24px);
-    -o-transform: translateY(-24px);
+    transform: translateY(-24px) scale(0.9, 0.9);
+    -webkit-transform: translateY(-24px) scale(0.9, 0.9);
+    -moz-transform: translateY(-24px) scale(0.9, 0.9);
+    -ms-transform: translateY(-24px) scale(0.9, 0.9);
+    -o-transform: translateY(-24px) scale(0.9, 0.9);
 }
   100% {
-    transform: translateY(-18px);
-    -webkit-transform: translateY(-18px);
-    -moz-transform: translateY(-18px);
-    -ms-transform: translateY(-18px);
-    -o-transform: translateY(-18px);
+    transform: translateY(-18px) scale(0.9, 0.9);
+    -webkit-transform: translateY(-18px) scale(0.9, 0.9);
+    -moz-transform: translateY(-18px) scale(0.9, 0.9);
+    -ms-transform: translateY(-18px) scale(0.9, 0.9);
+    -o-transform: translateY(-18px) scale(0.9, 0.9);
 }
 }
