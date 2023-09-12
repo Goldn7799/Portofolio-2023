@@ -14,7 +14,7 @@ let Global = {
 
 // Pages
 const pgfun = {
-  "Clear": ()=>{
+  "Clear": () => {
     root.innerHTML = "";
     if (Global.devMode) {
       console.log("<< Cleared Pages >>");
@@ -38,7 +38,7 @@ const pgfun = {
 
 // The Pages
 const page = {
-  "Home": ()=>{
+  "Home": () => {
     pgfun.Clear();
     pgfun.SetState("Home");
     pgfun.Add(`<nav class="thisNavbar" id="thisNavbar">
@@ -87,15 +87,15 @@ const page = {
     </div>`)
     pgfun.Add(`<div id="About">
       <h3>{/slash indo/} About Me {/slash indo/}</h3>
-      <div class="about-box">
+      <div class="about-box" id="About-Box" style="opacity: 0;">
         <div class="profile d-none d-md-block"></div>
         <p>Hello, let me introduce myself, my name is Syeif Sultoni Akbar, I come from Malang, precisely in the district. Bululawang is in Indonesia in the province of East Java. I have approximately 4 years experience in the world of coding and more than 5 years studying electronics and machines with my father. My hobby is studying logical things such as coding, electronics and science. I also like learning about computers and networking. I'm still relatively young, yes I'm 15 years old now in 2023. I'm a perfectionist, nice to meet you :)</p>
       </div>
-    </div><canvas style="height: 25vh;"></canvas>`);
+    </div><canvas style="height: 50px;"></canvas>`);
     pgfun.Add(`<div id="Experince">
       <h3>{/slash indo/} Experince {/slash indo/}</h3>
       <div class="experince-content exec-lg">
-      <div class="thisContent content-left">
+      <div id="expContent1" style="transform: scale(0, 0);" class="thisContent content-left">
         <div class="basicInfo">
           <h5>Learning Minecraft Server Devlopment</h5>
           <p><i class="fa-solid fa-calendar"></i> 2019-2020</p>
@@ -114,7 +114,7 @@ const page = {
           <button><img alt="PMMP Icon" src="./src/Assets/Laguage/pmmp.png"/>PocketMine-MP</button>
         </div>
       </div>
-        <div class="thisContent content-right">
+        <div id="expContent2" style="transform: scale(0, 0);" class="thisContent content-right">
           <div class="basicInfo">
             <h5>First Time Learning Program</h5>
             <p><i class="fa-solid fa-calendar"></i> 2019-2021</p>
@@ -130,7 +130,7 @@ const page = {
             <button><img alt="cpp Icon" src="./src/Assets/Laguage/cpp.png"/>C++</button>
           </div>
         </div>
-        <div class="thisContent content-left">
+        <div id="expContent3" style="transform: scale(0, 0);" class="thisContent content-left">
           <div class="basicInfo">
             <h5>Learning Python And Shell Command</h5>
             <p><i class="fa-solid fa-calendar"></i> 2020 - 2021</p>
@@ -148,7 +148,7 @@ const page = {
             <button><img alt="Bash/SH Icon" src="./src/Assets/Laguage/bash.png"/>Bash/SH</button>
           </div>
         </div>
-        <div class="thisContent content-right">
+        <div id="expContent4" style="transform: scale(0, 0);" class="thisContent content-right">
           <div class="basicInfo">
             <h5>Learning Web Development</h5>
             <p><i class="fa-solid fa-calendar"></i> 2021-2023</p>
@@ -174,7 +174,7 @@ const page = {
             <button><img alt="JSON Icon" src="./src/Assets/Laguage/json.png"/>JSON</button>
           </div>
         </div>
-        <div class="thisContent content-left">
+        <div id="expContent5" style="transform: scale(0, 0);" class="thisContent content-left">
           <div class="basicInfo">
             <h5>Experiment With OS</h5>
             <p><i class="fa-solid fa-calendar"></i> 2022 - 2023</p>
@@ -192,7 +192,7 @@ const page = {
             <button><img alt="Bash/SH Icon" src="./src/Assets/Laguage/bash.png"/>Shell Linux Command</button>
           </div>
         </div>
-        <div class="thisContent content-right">
+        <div id="expContent6" style="transform: scale(0, 0);"325 class="thisContent content-right">
           <div class="basicInfo">
             <h5>Web & Server Developer At AyKun Server</h5>
             <p><i class="fa-solid fa-calendar"></i> 2023</p>
@@ -216,7 +216,7 @@ const page = {
           </div>
         </div>
       </div>
-    </div><canvas style="height: 125px"></canvas>`)
+    </div><canvas style="height: 50px"></canvas>`)
     pgfun.Add(`<div id="Skills">
       <h3>{/slash indo/} Skills {/slash indo/}</h3>
     </div>`);
@@ -243,7 +243,7 @@ const page = {
     const pgExperince = document.querySelector('#Experince')
 
     // Update display interval
-    const update = ()=>{
+    const update = () => {
       if (Global.PageState === "Home") {
         // // Responsive
         if (window.scrollY > 100) {
@@ -297,6 +297,27 @@ const page = {
           document.querySelector('.navContact').classList.add('active');
         };
 
+        // // Scroll Animation
+        // // // Content
+        // if (document.querySelector('#expContent1').getBoundingClientRect().top < 360) {
+        //   document.getElementById('expContent1').style.transform = 'scale(1, 1)';
+        // };
+        // if (document.querySelector('#expContent2').getBoundingClientRect().top < 360) {
+        //   document.getElementById('expContent2').style.transform = 'scale(1, 1)';
+        // };
+        // if (document.querySelector('#expContent3').getBoundingClientRect().top < 360) {
+        //   document.getElementById('expContent3').style.transform = 'scale(1, 1)';
+        // };
+        // if (document.querySelector('#expContent4').getBoundingClientRect().top < 360) {
+        //   document.getElementById('expContent4').style.transform = 'scale(1, 1)';
+        // };
+        // if (document.querySelector('#expContent5').getBoundingClientRect().top < 360) {
+        //   document.getElementById('expContent5').style.transform = 'scale(1, 1)';
+        // };
+        // if (document.querySelector('#expContent6').getBoundingClientRect().top < 360) {
+        //   document.getElementById('expContent6').style.transform = 'scale(1, 1)';
+        // };
+
         // // Delay
         if (delayed > 4) {
           delayed = 0;
@@ -312,7 +333,75 @@ const page = {
       };
     }
     update();
-    const runningTextRunner = (Action, textArray)=>{
+
+    // Scroll Animation
+    const obsAbout = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            document.getElementById('About-Box').style.opacity = '1';
+          }, 500);
+          return;
+        };
+      })
+    })
+    obsAbout.observe(document.querySelector('.about-box'));
+    const obsExpContent1 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('expContent1').style.transform = 'scale(1, 1)';
+          return;
+        }
+      })
+    })
+    obsExpContent1.observe(document.querySelector('#expContent1'));
+    const obsExpContent2 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('expContent2').style.transform = 'scale(1, 1)';
+          return;
+        }
+      })
+    })
+    obsExpContent2.observe(document.querySelector('#expContent2'));
+    const obsExpContent3 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('expContent3').style.transform = 'scale(1, 1)';
+          return;
+        }
+      })
+    })
+    obsExpContent3.observe(document.querySelector('#expContent3'));
+    const obsExpContent4 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('expContent4').style.transform = 'scale(1, 1)';
+          return;
+        }
+      })
+    })
+    obsExpContent4.observe(document.querySelector('#expContent4'));
+    const obsExpContent5 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('expContent5').style.transform = 'scale(1, 1)';
+          return;
+        }
+      })
+    })
+    obsExpContent5.observe(document.querySelector('#expContent5'));
+    const obsExpContent6 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('expContent6').style.transform = 'scale(1, 1)';
+          return;
+        }
+      })
+    })
+    obsExpContent6.observe(document.querySelector('#expContent6'));
+
+    const runningTextRunner = (Action, textArray) => {
       if (!rtextList[textArray]) return runningTextRunner('write', 0);
       if (Action === 'selectionDelete') {
         rtextCursor.style.opacity = '0';
@@ -324,7 +413,7 @@ const page = {
           rtextValue.style.color = '';
           rtextValue.style.backgroundColor = '';
           setTimeout(() => {
-            runningTextRunner('write', textArray+1);
+            runningTextRunner('write', textArray + 1);
           }, rtextConfig.delayFirstTextWrite);
         }, rtextConfig.delayFirstTextDelete);
       } else if (Action === 'write') {
@@ -340,7 +429,7 @@ const page = {
             }, rtextConfig.delayWaitt.Extend + (rtextConfig.delayWaitt.PerTextAdd * targetText.length));
           } else {
             setTimeout(() => {
-              writeIn(cout+1);
+              writeIn(cout + 1);
             }, rtextConfig.delayWriteIn);
           }
         };
@@ -354,11 +443,11 @@ const page = {
           if (cout === 0) {
             rtextCursor.classList.add('rtext-cursor-active');
             setTimeout(() => {
-              runningTextRunner('write', textArray+1)
+              runningTextRunner('write', textArray + 1)
             }, rtextConfig.delayWaittWrite);
           } else {
             setTimeout(() => {
-              deleteIn(cout-1);
+              deleteIn(cout - 1);
             }, rtextConfig.delayDeteleIn);
           }
         };
@@ -375,7 +464,7 @@ const page = {
 
 
 // on page load
-window.onload = ()=>{
+window.onload = () => {
   setTimeout(() => {
     page.Home();
   }, 4500);

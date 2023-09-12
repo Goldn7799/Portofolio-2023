@@ -44,7 +44,7 @@ html {
 
 .thisNavbar .navb-background {
   background-color: rgba(0, 119, 255, 0.8);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
   border-radius: 10px;
   z-index: 1;
   -webkit-border-radius: 10px;
@@ -314,6 +314,11 @@ html {
   padding: 28px;
   background-color: rgb(102, 102, 102);
   border-radius: 12px;
+  transition: all ease-in-out 0.5s;
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
@@ -401,10 +406,15 @@ html {
   color: black;
   border-radius: 12px;
   margin-top: 15px;
+  transition: all ease-in-out 0.65s;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
+  -webkit-transition: all ease-in-out 0.65s;
+  -moz-transition: all ease-in-out 0.65s;
+  -ms-transition: all ease-in-out 0.65s;
+  -o-transition: all ease-in-out 0.65s;
 }
 
 #Experince .exec-lg .thisContent {
