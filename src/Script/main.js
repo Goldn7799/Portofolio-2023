@@ -87,7 +87,6 @@ const page = {
             <div onClick="mdHref('#Experince')" class="thisItem navExperince"><h6>Experince</h6><div class="underline"></div></div>
             <div onClick="mdHref('#Skills')" class="thisItem navSkills"><h6>Skills</h6><div class="underline"></div></div>
             <div onClick="mdHref('#Project')" class="thisItem navProject"><h6>Project</h6><div class="underline"></div></div>
-            <div onClick="mdHref('#Hobby')" class="thisItem navHobby"><h6>Hobby</h6><div class="underline"></div></div>
             <div onClick="mdHref('#Contact')" class="thisItem navContact"><h6>Contact</h6><div class="underline"></div></div>
           </div>
           <div class="nitem-ssocial d-none d-lg-flex">
@@ -252,7 +251,7 @@ const page = {
     </div><canvas style="height: 50px"></canvas>`)
     pgfun.Add(`<div id="Skills">
       <h3>{/slash indo/} Skills {/slash indo/}</h3>
-      <div class="skills-box" id="skills-box" style="transform: scale(0, 1);">
+      <div class="skills-box container" id="skills-box" style="transform: scale(0, 1);">
         <div class="thisContent row justify-content-center">
           <div class="thisItem col">
             <img alt="HTML Icon" src="./src/Assets/Laguage/html.png"/>
@@ -383,9 +382,46 @@ const page = {
         <div id="thisTransition"></div>
       </div>
     </div><canvas style="height: 50px;"></canvas>`);
-    pgfun.Add(`<div id="Project">
+    pgfun.Add(`<div id="Project" class="container">
       <h3>{/slash indo/} Project {/slash indo/}</h3>
-    </div>`)
+      <div class="project-box row justify-content-center">
+        <div class="thisItem col" style="background-image: url(./src/Assets/Screenshots/this-portofolio.png);">
+          <div class="theInfo">
+            <h6>Portofolio 2023</h6>
+            <p>you're right, This portofolio!</p>
+            <i class="fa-solid fa-link"></i>
+          </div>
+        </div>
+        <div class="thisItem col" style="background-image: url(./src/Assets/Screenshots/aykun-web.png);">
+          <div class="theInfo">
+            <h6>AyKun Website</h6>
+            <p>Website for Minecraft Server at Indonesia, using Minecraft-MP APi for data</p>
+            <i class="fa-solid fa-link"></i>
+          </div>
+        </div>
+        <div class="thisItem col" style="background-image: url(./src/Assets/Screenshots/openai-naonbotz.png);">
+          <div class="theInfo">
+            <h6>OpenAI-NaonBotz</h6>
+            <p>Whatsapp AI Bots using OpenAI Apikey and WhatsappWeb-js</p>
+            <i class="fa-solid fa-link"></i>
+          </div>
+        </div>
+        <div class="thisItem col" style="background-image: url(./src/Assets/Screenshots/chatid.png);">
+          <div class="theInfo">
+            <h6>ChatID</h6>
+            <p>Realtime Chat Web using Express and JSON+FS for Database and Firebase for Accounting</p>
+            <i class="fa-solid fa-link"></i>
+          </div>
+        </div>
+        <div class="thisItem col" style="background-image: url(./src/Assets/Screenshots/manage-aykun.png);">
+          <div class="theInfo">
+            <h6>Manage Aykun Server</h6>
+            <p>As Developer and Admin at AyKun Minecraft Server, Manage Server and User</p>
+            <i class="fa-solid fa-link"></i>
+          </div>
+        </div>
+      </div>
+    </div><canvas style="height: 50px;"></canvas>`)
     // Page Variable
     var delayed = 0;
     // // Running Text
@@ -408,6 +444,7 @@ const page = {
     const pgAbout = document.querySelector('#About')
     const pgExperince = document.querySelector('#Experince')
     const pgSkills = document.querySelector('#Skills')
+    const pgProject = document.querySelector('#Project')
 
     // Update display interval
     const update = () => {
@@ -433,6 +470,7 @@ const page = {
         const rcAbout = pgAbout.getBoundingClientRect();
         const rcExperince = pgExperince.getBoundingClientRect();
         const rcSkills = pgSkills.getBoundingClientRect();
+        const rcProject = pgProject.getBoundingClientRect();
         if (Math.abs(rcHome.top) < 200) {
           Global.navState = 'Home';
         };
@@ -444,14 +482,15 @@ const page = {
         };
         if (Math.abs(rcSkills.top) < 400) {
           Global.navState = 'Skills';
-          console.log("SKILLLLLLLLL")
+        };
+        if (Math.abs(rcProject.top) < 300) {
+          Global.navState = 'Project';
         };
         document.querySelector('.navHome').classList.remove('active');
         document.querySelector('.navAbout').classList.remove('active');
         document.querySelector('.navExperince').classList.remove('active');
         document.querySelector('.navSkills').classList.remove('active');
         document.querySelector('.navProject').classList.remove('active');
-        document.querySelector('.navHobby').classList.remove('active');
         document.querySelector('.navContact').classList.remove('active');
         if (Global.navState === 'Home') {
           document.querySelector('.navHome').classList.add('active');
@@ -463,8 +502,6 @@ const page = {
           document.querySelector('.navSkills').classList.add('active');
         } else if (Global.navState === 'Project') {
           document.querySelector('.navProject').classList.add('active');
-        } else if (Global.navState === 'Hobby') {
-          document.querySelector('.navHobby').classList.add('active');
         } else if (Global.navState === 'Contact') {
           document.querySelector('.navContact').classList.add('active');
         };
@@ -637,9 +674,16 @@ window.onload = () => {
 const mdHref = (url) => {
   window.location.replace(url);
   if (Global.devMode) {
+    console.log(`Redirecting ${url}`);
+  };
+}
+const mdOpen = (url) => {
+  window.location.replace(url);
+  if (Global.devMode) {
     console.log(`Opening ${url}`);
   };
 }
 // // Export to Global
 window.mdHref = mdHref;
+window.mdOpen = mdOpen;
 // [END] Global Function
