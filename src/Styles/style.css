@@ -390,10 +390,11 @@ html {
 
 #Experince .experince-content {
   width: 98%;
+  display: flex;
+  flex-direction: column;
 }
 
 #Experince .experince-content .thisContent {
-  width: 52%;
   padding: 10px;
   height: fit-content;
   background-color: white;
@@ -404,6 +405,24 @@ html {
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
+}
+
+#Experince .exec-lg .thisContent {
+  width: 52%;
+}
+#Experince .exec-sm .thisContent {
+  width: 90%;
+}
+
+#Experince .exec-lg .content-left {
+  align-self: start;
+}
+#Experince .exec-lg .content-right {
+  align-self: end;
+}
+
+#Experince .exec-sm {
+  align-items: center;
 }
 
 #Experince .experince-content .thisContent .basicInfo {
@@ -439,6 +458,10 @@ html {
 #Experince .experince-content .thisContent .usedTechnology {
   display: flex;
   flex-direction: row;
+}
+
+#Experince .exec-sm .thisContent .usedTechnology {
+  overflow-x: scroll;
 }
 
 #Experince .experince-content .thisContent .usedTechnology button {

@@ -87,14 +87,14 @@ const page = {
     pgfun.Add(`<div id="About">
       <h3>{/slash indo/} About Me {/slash indo/}</h3>
       <div class="about-box">
-        <div class="profile"></div>
+        <div class="profile d-none d-md-block"></div>
         <p>Hello, let me introduce myself, my name is Syeif Sultoni Akbar, I come from Malang, precisely in the district. Bululawang is in Indonesia in the province of East Java. I have approximately 4 years experience in the world of coding and more than 5 years studying electronics and machines with my father. My hobby is studying logical things such as coding, electronics and science. I also like learning about computers and networking. I'm still relatively young, yes I'm 15 years old now in 2023. I'm a perfectionist, nice to meet you :)</p>
       </div>
     </div><canvas style="height: 25vh;"></canvas>`);
     pgfun.Add(`<div id="Experince">
       <h3>{/slash indo/} Experince {/slash indo/}</h3>
-      <div class="experince-content">
-      <div class="thisContent" style="float: left;">
+      <div class="experince-content exec-lg">
+      <div class="thisContent content-left">
         <div class="basicInfo">
           <h5>Learning Minecraft Server Devlopment</h5>
           <p><i class="fa-solid fa-calendar"></i> 2019-2020</p>
@@ -107,11 +107,13 @@ const page = {
           <li>Manage Server <span>(Minecraft)</span></li>
         </ul>
         <div class="usedTechnology">
-          <button><img alt="Python" src="./src/Assets/Laguage/cpp.png"/>Python</button>
-          <button><img alt="Bash/SH" src="./src/Assets/Laguage/cpp.png"/>Bash/SH</button>
+          <button><img alt="Minecraft Server Icon" src="./src/Assets/Laguage/server.png"/>Minecraft Server</button>
+          <button><img alt="YML Icon" src="./src/Assets/Laguage/yml.png"/>YML</button>
+          <button><img alt="YAML Icon" src="./src/Assets/Laguage/yaml.png"/>YAML</button>
+          <button><img alt="PMMP Icon" src="./src/Assets/Laguage/pmmp.png"/>PocketMine-MP</button>
         </div>
       </div>
-        <div class="thisContent" style="float: right;">
+        <div class="thisContent content-right">
           <div class="basicInfo">
             <h5>First Time Learning Program</h5>
             <p><i class="fa-solid fa-calendar"></i> 2019-2021</p>
@@ -124,10 +126,10 @@ const page = {
             <li>Making Calculator <span>(C++)</span></li>
           </ul>
           <div class="usedTechnology">
-            <button><img alt="cpp" src="./src/Assets/Laguage/cpp.png"/>C++</button>
+            <button><img alt="cpp Icon" src="./src/Assets/Laguage/cpp.png"/>C++</button>
           </div>
         </div>
-        <div class="thisContent" style="float: left;">
+        <div class="thisContent content-left">
           <div class="basicInfo">
             <h5>Learning Python And Shell Command</h5>
             <p><i class="fa-solid fa-calendar"></i> 2020 - 2021</p>
@@ -141,11 +143,11 @@ const page = {
             <li>Simple Tools <span>(Python)</span></li>
           </ul>
           <div class="usedTechnology">
-            <button><img alt="Python" src="./src/Assets/Laguage/cpp.png"/>Python</button>
-            <button><img alt="Bash/SH" src="./src/Assets/Laguage/cpp.png"/>Bash/SH</button>
+            <button><img alt="Python Icon" src="./src/Assets/Laguage/python.png"/>Python</button>
+            <button><img alt="Bash/SH Icon" src="./src/Assets/Laguage/bash.png"/>Bash/SH</button>
           </div>
         </div>
-        <div class="thisContent" style="float: right;">
+        <div class="thisContent content-right">
           <div class="basicInfo">
             <h5>Learning Web Development</h5>
             <p><i class="fa-solid fa-calendar"></i> 2021-2023</p>
@@ -165,10 +167,13 @@ const page = {
             <li>Making Portofolio 2023 <span>(HTML, CSS, JS)</span></li>
           </ul>
           <div class="usedTechnology">
-            <button><img alt="cpp" src="./src/Assets/Laguage/cpp.png"/>C++</button>
+            <button><img alt="HTML Icon" src="./src/Assets/Laguage/html.png"/>HTML</button>
+            <button><img alt="CSS Icon" src="./src/Assets/Laguage/css.png"/>CSS</button>
+            <button><img alt="JS Icon" src="./src/Assets/Laguage/js.png"/>Java Script</button>
+            <button><img alt="JSON Icon" src="./src/Assets/Laguage/json.png"/>JSON</button>
           </div>
         </div>
-        <div class="thisContent" style="float: left;">
+        <div class="thisContent content-left">
           <div class="basicInfo">
             <h5>Experiment With OS</h5>
             <p><i class="fa-solid fa-calendar"></i> 2022 - 2023</p>
@@ -182,11 +187,11 @@ const page = {
             <li>Experiment with  Krenel <span>(Python)</span></li>
           </ul>
           <div class="usedTechnology">
-            <button><img alt="Python" src="./src/Assets/Laguage/cpp.png"/>Python</button>
-            <button><img alt="Bash/SH" src="./src/Assets/Laguage/cpp.png"/>Bash/SH</button>
+            <button><img alt="Linux Icon" src="./src/Assets/Laguage/linux.png"/>Linux</button>
+            <button><img alt="Bash/SH Icon" src="./src/Assets/Laguage/bash.png"/>Shell Linux Command</button>
           </div>
         </div>
-        <div class="thisContent" style="float: right;">
+        <div class="thisContent content-right">
           <div class="basicInfo">
             <h5>Web & Server Developer At AyKun Server</h5>
             <p><i class="fa-solid fa-calendar"></i> 2023</p>
@@ -200,8 +205,13 @@ const page = {
             <li>Making Simple Plugin <span>(JAVA, Plugin[Bukkit, Paper])</span></li>
           </ul>
           <div class="usedTechnology">
-            <button><img alt="Python" src="./src/Assets/Laguage/cpp.png"/>Python</button>
-            <button><img alt="Bash/SH" src="./src/Assets/Laguage/cpp.png"/>Bash/SH</button>
+            <button><img alt="HTML Icon" src="./src/Assets/Laguage/html.png"/>HTML</button>
+            <button><img alt="CSS Icon" src="./src/Assets/Laguage/css.png"/>CSS</button>
+            <button><img alt="JS Icon" src="./src/Assets/Laguage/js.png"/>Java Script</button>
+            <button><img alt="Java Icon" src="./src/Assets/Laguage/java.png"/>Java</button>
+            <button><img alt="Bukkit Icon" src="./src/Assets/Laguage/bukkit.png"/>Bukkit</button>
+            <button><img alt="Paper Icon" src="./src/Assets/Laguage/paper.png"/>Paper</button>
+            <button><img alt="Server Icon" src="./src/Assets/Laguage/server.png"/>Server</button>
           </div>
         </div>
       </div>
@@ -233,6 +243,13 @@ const page = {
         } else {
           document.getElementById('thisNavbar').style.top = "-8.2%";
           document.getElementById('thisNavbar').style.width = "90%";
+        }
+        if (window.screen.width < 666) {
+          document.querySelector('.experince-content').classList.remove('exec-lg');
+          document.querySelector('.experince-content').classList.add('exec-sm');
+        } else {
+          document.querySelector('.experince-content').classList.add('exec-lg');
+          document.querySelector('.experince-content').classList.remove('exec-sm');
         }
         if (delayed > 4) {
           delayed = 0;
