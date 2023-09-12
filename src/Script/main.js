@@ -6,7 +6,8 @@ const root = document.getElementById('root');
 // Setting up Global Variable
 let Global = {
   "devMode": false,
-  "PageState": undefined
+  "PageState": undefined,
+  "navState": undefined
 }
 // [END] Setting up Global Variable
 
@@ -48,13 +49,13 @@ const page = {
         </div>
         <div class="nitem-selector d-none d-lg-flex">
           <div class="nitem-spage">
-            <div class="thisItem active"><h6>Home</h6><div class="underline"></div></div>
-            <div class="thisItem"><h6>About</h6><div class="underline"></div></div>
-            <div class="thisItem"><h6>Experince</h6><div class="underline"></div></div>
-            <div class="thisItem"><h6>Skills</h6><div class="underline"></div></div>
-            <div class="thisItem"><h6>Project</h6><div class="underline"></div></div>
-            <div class="thisItem"><h6>Hobby</h6><div class="underline"></div></div>
-            <div class="thisItem"><h6>Contact</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#Home')" class="thisItem navHome"><h6>Home</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#About')" class="thisItem navAbout"><h6>About</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#Experince')" class="thisItem navExperince"><h6>Experince</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#Skills')" class="thisItem navSkills"><h6>Skills</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#Project')" class="thisItem navProject"><h6>Project</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#Hobby')" class="thisItem navHobby"><h6>Hobby</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#Contact')" class="thisItem navContact"><h6>Contact</h6><div class="underline"></div></div>
           </div>
           <div class="nitem-ssocial d-none d-lg-flex">
             <button><i class="fa-xl fa-brands fa-github"></i><div class="sunderline"></div></button>
@@ -216,6 +217,9 @@ const page = {
         </div>
       </div>
     </div><canvas style="height: 125px"></canvas>`)
+    pgfun.Add(`<div id="Skills">
+      <h3>{/slash indo/} Skills {/slash indo/}</h3>
+    </div>`);
     // Page Variable
     var delayed = 0;
     // // Running Text
@@ -233,10 +237,15 @@ const page = {
       "delayFirstTextWrite": 400,
       "delayFirstTextDelete": 300
     }
+    // // Navbar
+    const pgHome = document.querySelector('#Home')
+    const pgAbout = document.querySelector('#About')
+    const pgExperince = document.querySelector('#Experince')
 
     // Update display interval
     const update = ()=>{
       if (Global.PageState === "Home") {
+        // // Responsive
         if (window.scrollY > 100) {
           document.getElementById('thisNavbar').style.top = "";
           document.getElementById('thisNavbar').style.width = "";
@@ -251,6 +260,44 @@ const page = {
           document.querySelector('.experince-content').classList.add('exec-lg');
           document.querySelector('.experince-content').classList.remove('exec-sm');
         }
+
+        // // Navbar
+        const rcHome = pgHome.getBoundingClientRect();
+        const rcAbout = pgAbout.getBoundingClientRect();
+        const rcExperince = pgExperince.getBoundingClientRect();
+        if (Math.abs(rcHome.top) < 200) {
+          Global.navState = 'Home';
+        };
+        if (Math.abs(rcAbout.top) < 200) {
+          Global.navState = 'About';
+        };
+        if (Math.abs(rcExperince.top) < 200) {
+          Global.navState = 'Experince';
+        };
+        document.querySelector('.navHome').classList.remove('active');
+        document.querySelector('.navAbout').classList.remove('active');
+        document.querySelector('.navExperince').classList.remove('active');
+        document.querySelector('.navSkills').classList.remove('active');
+        document.querySelector('.navProject').classList.remove('active');
+        document.querySelector('.navHobby').classList.remove('active');
+        document.querySelector('.navContact').classList.remove('active');
+        if (Global.navState === 'Home') {
+          document.querySelector('.navHome').classList.add('active');
+        } else if (Global.navState === 'About') {
+          document.querySelector('.navAbout').classList.add('active');
+        } else if (Global.navState === 'Experince') {
+          document.querySelector('.navExperince').classList.add('active');
+        } else if (Global.navState === 'Skills') {
+          document.querySelector('.navSkills').classList.add('active');
+        } else if (Global.navState === 'Project') {
+          document.querySelector('.navProject').classList.add('active');
+        } else if (Global.navState === 'Hobby') {
+          document.querySelector('.navHobby').classList.add('active');
+        } else if (Global.navState === 'Contact') {
+          document.querySelector('.navContact').classList.add('active');
+        };
+
+        // // Delay
         if (delayed > 4) {
           delayed = 0;
           if (Global.devMode) {
@@ -261,7 +308,7 @@ const page = {
         }
         setTimeout(() => {
           update()
-        }, 250);
+        }, 5);
       };
     }
     update();
@@ -334,3 +381,14 @@ window.onload = ()=>{
   }, 4500);
 }
 // [END] on page load
+
+// Global Function
+const mdHref = (url) => {
+  window.location.replace(url);
+  if (Global.devMode) {
+    console.log(`Opening ${url}`);
+  };
+}
+// // Export to Global
+window.mdHref = mdHref;
+// [END] Global Function
