@@ -83,11 +83,11 @@ const page = {
         <div class="nitem-selector d-none d-lg-flex">
           <div class="nitem-spage">
             <div onClick="mdHref('#Home')" class="thisItem navHome"><h6>Home</h6><div class="underline"></div></div>
-            <div onClick="mdHref('#About')" class="thisItem navAbout"><h6>About</h6><div class="underline"></div></div>
-            <div onClick="mdHref('#Experince')" class="thisItem navExperince"><h6>Experince</h6><div class="underline"></div></div>
-            <div onClick="mdHref('#Skills')" class="thisItem navSkills"><h6>Skills</h6><div class="underline"></div></div>
-            <div onClick="mdHref('#Project')" class="thisItem navProject"><h6>Project</h6><div class="underline"></div></div>
-            <div onClick="mdHref('#Contact')" class="thisItem navContact"><h6>Contact</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#AboutPG')" class="thisItem navAbout"><h6>About</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#ExperincePG')" class="thisItem navExperince"><h6>Experince</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#SkillsPG')" class="thisItem navSkills"><h6>Skills</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#ProjectPG')" class="thisItem navProject"><h6>Project</h6><div class="underline"></div></div>
+            <div onClick="mdHref('#SocialPG')" class="thisItem navSocial"><h6>Social</h6><div class="underline"></div></div>
           </div>
           <div class="nitem-ssocial d-none d-lg-flex">
             <button><i class="fa-xl fa-brands fa-github"></i><div class="sunderline"></div></button>
@@ -97,7 +97,7 @@ const page = {
             <button><i class="fa-xl fa-brands fa-youtube"></i><div class="sunderline"></div></button>
           </div>
         </div>
-        <div class="nitem-expand-info d-flex d-lg-none">
+        <div id="nitem-expand-info" class="nitem-expand-info d-flex d-lg-none">
           <div class="ne-line"></div>
           <div class="ne-line"></div>
           <div class="ne-line"></div>
@@ -117,15 +117,15 @@ const page = {
         <div class="profile d-none d-md-block"></div>
       </div>
     </div>`)
-    pgfun.Add(`<div id="About">
-      <h3>{/slash indo/} About Me {/slash indo/}</h3>
+    pgfun.Add(`<div id="AboutPG" class="thePG"></div><div id="About">
+      <h3>{/slash indo/} <b>About Me</b> {/slash indo/}</h3>
       <div class="about-box" id="About-Box" style="opacity: 0; transform: translateY(65px);">
         <div class="profile d-none d-md-block"></div>
         <p>Hello, let me introduce myself, my name is Syeif Sultoni Akbar, I come from Malang, precisely in the district. Bululawang is in Indonesia in the province of East Java. I have approximately 4 years experience in the world of coding and more than 5 years studying electronics and machines with my father. My hobby is studying logical things such as coding, electronics and science. I also like learning about computers and networking. I'm still relatively young, yes I'm 15 years old now in 2023. I'm a perfectionist, nice to meet you :)</p>
       </div>
-    </div><canvas style="height: 50px;"></canvas>`);
-    pgfun.Add(`<div id="Experince">
-      <h3>{/slash indo/} Experince {/slash indo/}</h3>
+    </div>`);
+    pgfun.Add(`<div id="ExperincePG" class="thePG"></div><div id="Experince">
+      <h3>{/slash indo/} <b>Experince</b> {/slash indo/}</h3>
       <div class="experince-content exec-lg">
       <div id="expContent1" style="transform: scale(0, 0);" class="thisContent content-left">
         <div class="basicInfo">
@@ -248,9 +248,9 @@ const page = {
           </div>
         </div>
       </div>
-    </div><canvas style="height: 50px"></canvas>`)
-    pgfun.Add(`<div id="Skills">
-      <h3>{/slash indo/} Skills {/slash indo/}</h3>
+    </div>`)
+    pgfun.Add(`<div id="SkillsPG" class="thePG"></div><div id="Skills">
+      <h3>{/slash indo/} <b>Skills</b> {/slash indo/}</h3>
       <div class="skills-box container" id="skills-box" style="transform: scale(0, 1);">
         <div class="thisContent row justify-content-center">
           <div class="thisItem col">
@@ -381,9 +381,9 @@ const page = {
         </div>
         <div id="thisTransition"></div>
       </div>
-    </div><canvas style="height: 50px;"></canvas>`);
-    pgfun.Add(`<div id="Project" class="container">
-      <h3>{/slash indo/} Project {/slash indo/}</h3>
+    </div>`);
+    pgfun.Add(`<div id="ProjectPG" class="thePG"></div><div id="Project" class="container">
+      <h3>{/slash indo/} <b>Project</b> {/slash indo/}</h3>
       <div class="project-box row justify-content-center">
         <div class="thisItem col" style="background-image: url(./src/Assets/Screenshots/this-portofolio.png);">
           <div class="theInfo">
@@ -421,12 +421,121 @@ const page = {
           </div>
         </div>
       </div>
-    </div><canvas style="height: 50px;"></canvas>`)
-    pgfun.Add(`<div id="Contact">
-      <h3>{/slash indo/} Contact {/slash indo/}</h3>
-      <div class="contact-box"></div>
+    </div>`)
+    pgfun.Add(`<div id="SocialPG" class="thePG"></div><div id="Social">
+      <h3>{/slash indo/} <b>Social</b> {/slash indo/}</h3>
+      <div class="social-box container">
+        <div class="thisContent row">
+          <div class="thisItem col">
+            <img alt="gmail icon" src="./src/Assets/Apps/gmail.png"/>
+            <div class="basic-info">
+              <h6>E-Mail</h6>
+              <p>syeifsultan@gmail.com</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="whatsapp icon" src="./src/Assets/Apps/whatsapp.png"/>
+            <div class="basic-info">
+              <h6>WhatsApp</h6>
+              <p>+62 812-2802-0195</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="github icon" src="./src/Assets/Apps/github.png"/>
+            <div class="basic-info">
+              <h6>GitHub</h6>
+              <p>@Goldn7799</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="discord icon" src="./src/Assets/Apps/discord.png"/>
+            <div class="basic-info">
+              <h6>Discord</h6>
+              <p>@gmrc79</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="instagram icon" src="./src/Assets/Apps/instagram.png"/>
+            <div class="basic-info">
+              <h6>Instagram</h6>
+              <p>@SyeifSultan</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="youTube icon" src="./src/Assets/Apps/youtube.png"/>
+            <div class="basic-info">
+              <h6>YouTube</h6>
+              <p>@syeifgamer1015</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="epicgames icon" src="./src/Assets/Apps/epicgames.png"/>
+            <div class="basic-info">
+              <h6>EpicGames</h6>
+              <p>@Syeif Sultan</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="riotgames icon" src="./src/Assets/Apps/riotgames.png"/>
+            <div class="basic-info">
+              <h6>RiotGames</h6>
+              <p>@GMRC79#syeif</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="spotify icon" src="./src/Assets/Apps/spotify.png"/>
+            <div class="basic-info">
+              <h6>Spotify</h6>
+              <p>@Syeif Sultan</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="steam icon" src="./src/Assets/Apps/steam.png"/>
+            <div class="basic-info">
+              <h6>Steam</h6>
+              <p>@syeifgamer5544</p>
+            </div>
+          </div>
+          <div class="thisItem col">
+            <img alt="tiktok icon" src="./src/Assets/Apps/tiktok.png"/>
+            <div class="basic-info">
+              <h6>TikTok</h6>
+              <p>@syeifgamer1015_ofc</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`)
+    pgfun.Add(`<div class="Copyringht">
+      <p>Copyright ⒸSyeif Sultan 2023 <span onClick="mdHref('https://sgstudio.site')">https://sgstudio.site</span> | Made In Indonesia❤️‍🔥</p>
     </div>`)
     pgfun.Add(`<div id="scroll-mouse"></div><div id="scroll-up"></div>`)
+    pgfun.Add(`<div id="expand-navbar" class="d-flex d-lg-none" style="transform: translateY(50%) translateX(500px);">
+      <div class="thisItem" onClick="mdHref('#Home')">
+        <p><b>Home</b></p>
+        <div class="underline"></div>
+      </div>
+      <div class="thisItem" onClick="mdHref('#AboutPG')">
+        <p><b>About</b></p>
+        <div class="underline"></div>
+      </div>
+      <div class="thisItem" onClick="mdHref('#ExperincePG')">
+        <p><b>Experince</b></p>
+        <div class="underline"></div>
+      </div>
+      <div class="thisItem" onClick="mdHref('#SkillsPG')">
+        <p><b>Skills</b></p>
+        <div class="underline"></div>
+      </div>
+      <div class="thisItem" onClick="mdHref('#ProjectPG')">
+        <p><b>Project</b></p>
+        <div class="underline"></div>
+      </div>
+      <div class="thisItem" onClick="mdHref('#SocialPG')">
+        <p><b>Social</b></p>
+        <div class="underline"></div>
+      </div>
+    </div>`)
     // Page Variable
     var delayed = 0;
     // // Running Text
@@ -450,11 +559,27 @@ const page = {
     const pgExperince = document.querySelector('#Experince')
     const pgSkills = document.querySelector('#Skills')
     const pgProject = document.querySelector('#Project')
+    const pgSocial = document.querySelector('#Social')
+    const expandNavbar = document.getElementById('expand-navbar')
+    const expNavBtn = document.getElementById('nitem-expand-info')
 
     // Function Keys
     document.getElementById('scroll-up').addEventListener('click', ()=>{
       mdHref('#Home');
     })
+    expNavBtn.addEventListener('click', ()=>{
+      if (expNavBtn.classList.contains('expnavbtn-active')) {
+        expNavBtn.classList.remove('expnavbtn-active')
+        expandNavbar.style.transform = 'translateY(50%) translateX(500px)'
+      } else {
+        expNavBtn.classList.add('expnavbtn-active')
+        expandNavbar.style.transform = 'translateY(50%) translateX(0px)'
+      }
+    })
+    const closeExpNav = ()=>{
+      expNavBtn.classList.remove('expnavbtn-active')
+      expandNavbar.style.transform = 'translateY(50%) translateX(500px)'
+    }
 
     // Update display interval
     const update = () => {
@@ -470,6 +595,7 @@ const page = {
           document.getElementById('thisNavbar').style.width = "90%";
           document.getElementById('scroll-mouse').style.marginBottom = "20px";
           document.getElementById('scroll-up').style.marginBottom = "-80px";
+          closeExpNav();
         }
         if (window.screen.width < 666) {
           document.querySelector('.experince-content').classList.remove('exec-lg');
@@ -485,6 +611,7 @@ const page = {
         const rcExperince = pgExperince.getBoundingClientRect();
         const rcSkills = pgSkills.getBoundingClientRect();
         const rcProject = pgProject.getBoundingClientRect();
+        const rcSocial = pgSocial.getBoundingClientRect();
         if (Math.abs(rcHome.top) < 200) {
           Global.navState = 'Home';
         };
@@ -500,12 +627,15 @@ const page = {
         if (Math.abs(rcProject.top) < 300) {
           Global.navState = 'Project';
         };
+        if (Math.abs(rcSocial.top) < 360) {
+          Global.navState = 'Social';
+        };
         document.querySelector('.navHome').classList.remove('active');
         document.querySelector('.navAbout').classList.remove('active');
         document.querySelector('.navExperince').classList.remove('active');
         document.querySelector('.navSkills').classList.remove('active');
         document.querySelector('.navProject').classList.remove('active');
-        document.querySelector('.navContact').classList.remove('active');
+        document.querySelector('.navSocial').classList.remove('active');
         if (Global.navState === 'Home') {
           document.querySelector('.navHome').classList.add('active');
         } else if (Global.navState === 'About') {
@@ -516,8 +646,8 @@ const page = {
           document.querySelector('.navSkills').classList.add('active');
         } else if (Global.navState === 'Project') {
           document.querySelector('.navProject').classList.add('active');
-        } else if (Global.navState === 'Contact') {
-          document.querySelector('.navContact').classList.add('active');
+        } else if (Global.navState === 'Social') {
+          document.querySelector('.navSocial').classList.add('active');
         };
 
         // // Delay
@@ -614,6 +744,7 @@ const page = {
     })
     obsSkills.observe(document.querySelector('#skills-box'));
 
+    // Running Text
     const runningTextRunner = (Action, textArray) => {
       if (!rtextList[textArray]) return runningTextRunner('write', 0);
       if (Action === 'selectionDelete') {
