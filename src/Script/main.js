@@ -253,7 +253,7 @@ const page = {
     </div>`)
     pgfun.Add(`<div id="SkillsPG" class="thePG"></div><div id="Skills">
       <h3>{/slash indo/} <b>Skills</b> {/slash indo/}</h3>
-      <div class="skills-box container" id="skills-box" style="transform: scale(0, 1);">
+      <div class="skills-box container" id="skills-box" style="transform: scale(0.1, 1);">
         <div class="thisContent row justify-content-center">
           <div class="thisItem col">
             <img alt="HTML Icon" src="./src/Assets/Laguage/html.png"/>
@@ -426,7 +426,7 @@ const page = {
     </div>`)
     pgfun.Add(`<div id="SocialPG" class="thePG"></div><div id="Social">
       <h3>{/slash indo/} <b>Social</b> {/slash indo/}</h3>
-      <div class="social-box container" id="social-box" style="transform: scale(0, 1);">
+      <div class="social-box container" id="social-box" style="transform: scale(0.1, 0.1);">
         <div class="thisContent row">
           <div class="thisItem col">
             <img alt="gmail icon" src="./src/Assets/Apps/gmail.png"/>
