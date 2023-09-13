@@ -14,6 +14,7 @@ let Global = {
 
 
 // Pages
+// // Utility Render
 const pgfun = {
   "Clear": () => {
     root.innerHTML = "";
@@ -68,6 +69,7 @@ const pgfun = {
     }
   }
 }
+// // [END] Utility Render
 
 // The Pages
 const page = {
