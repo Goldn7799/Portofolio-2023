@@ -384,7 +384,7 @@ const page = {
     </div>`);
     pgfun.Add(`<div id="ProjectPG" class="thePG"></div><div id="Project" class="container">
       <h3>{/slash indo/} <b>Project</b> {/slash indo/}</h3>
-      <div class="project-box row justify-content-center">
+      <div class="project-box row justify-content-center" id="project-box" style="opacity: 0; transform: translateY(40px);">
         <div class="thisItem col" style="background-image: url(./src/Assets/Screenshots/this-portofolio.png);">
           <div class="theInfo">
             <h6>Portofolio 2023</h6>
@@ -424,7 +424,7 @@ const page = {
     </div>`)
     pgfun.Add(`<div id="SocialPG" class="thePG"></div><div id="Social">
       <h3>{/slash indo/} <b>Social</b> {/slash indo/}</h3>
-      <div class="social-box container">
+      <div class="social-box container" id="social-box" style="transform: scale(0, 1);">
         <div class="thisContent row">
           <div class="thisItem col">
             <img alt="gmail icon" src="./src/Assets/Apps/gmail.png"/>
@@ -733,7 +733,6 @@ const page = {
       })
     })
     obsExpContent6.observe(document.querySelector('#expContent6'));
-    obsExpContent5.observe(document.querySelector('#expContent5'));
     const obsSkills = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -743,6 +742,25 @@ const page = {
       })
     })
     obsSkills.observe(document.querySelector('#skills-box'));
+    const obsProject = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('project-box').style.transform = '';
+          document.getElementById('project-box').style.opacity = '';
+          return;
+        }
+      })
+    })
+    obsProject.observe(document.querySelector('#project-box'));
+    const obsSocial = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('social-box').style.transform = 'scale(1, 1)';
+          return;
+        }
+      })
+    })
+    obsSocial.observe(document.querySelector('#social-box'));
 
     // Running Text
     const runningTextRunner = (Action, textArray) => {

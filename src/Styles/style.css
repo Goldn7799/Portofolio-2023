@@ -869,6 +869,11 @@ html {
   height: fit-content;
   justify-content: center;
   align-items: center;
+  transition: all ease-in-out 0.4s;
+  -webkit-transition: all ease-in-out 0.4s;
+  -moz-transition: all ease-in-out 0.4s;
+  -ms-transition: all ease-in-out 0.4s;
+  -o-transition: all ease-in-out 0.4s;
 }
 
 #Project .project-box .thisItem {
@@ -1033,6 +1038,11 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: all ease-in-out 0.6s;
+  -webkit-transition: all ease-in-out 0.6s;
+  -moz-transition: all ease-in-out 0.6s;
+  -ms-transition: all ease-in-out 0.6s;
+  -o-transition: all ease-in-out 0.6s;
 }
 
 #Social .social-box .thisContent {
