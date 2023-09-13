@@ -92,11 +92,11 @@ const page = {
             <div onClick="mdHref('#SocialPG')" class="thisItem navSocial"><h6>Social</h6><div class="underline"></div></div>
           </div>
           <div class="nitem-ssocial d-none d-lg-flex">
-            <button><i class="fa-xl fa-brands fa-github"></i><div class="sunderline"></div></button>
-            <button><i class="fa-xl fa-brands fa-discord"></i><div class="sunderline"></div></button>
-            <button><i class="fa-xl fa-brands fa-whatsapp"></i><div class="sunderline"></div></button>
-            <button><i class="fa-xl fa-brands fa-instagram"></i><div class="sunderline"></div></button>
-            <button><i class="fa-xl fa-brands fa-youtube"></i><div class="sunderline"></div></button>
+            <button onClick="mdOpen('https://github.com/Goldn7799')"><i class="fa-xl fa-brands fa-github"></i><div class="sunderline"></div></button>
+            <button onClick="mdOpen('https://discord.com/users/654671512229511178')"><i class="fa-xl fa-brands fa-discord"></i><div class="sunderline"></div></button>
+            <button onClick="mdOpen('https://wa.me/+6281228020195')"><i class="fa-xl fa-brands fa-whatsapp"></i><div class="sunderline"></div></button>
+            <button onCLick="mdOpen('https://www.instagram.com/syeifsultan/')"><i class="fa-xl fa-brands fa-instagram"></i><div class="sunderline"></div></button>
+            <button onClick="mdOpen('https://www.youtube.com/@syeifgamer1015')"><i class="fa-xl fa-brands fa-youtube"></i><div class="sunderline"></div></button>
           </div>
         </div>
         <div id="nitem-expand-info" class="nitem-expand-info d-flex d-lg-none">
