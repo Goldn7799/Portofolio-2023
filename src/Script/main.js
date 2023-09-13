@@ -5,7 +5,7 @@ const root = document.getElementById('root');
 
 // Setting up Global Variable
 let Global = {
-  "devMode": true,
+  "devMode": false,
   "logLevel": 1,
   "PageState": undefined,
   "navState": undefined
